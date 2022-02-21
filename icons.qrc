@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="bColorIcon">icons/background-color.png</file>
+        <file alias="clearAllIcon">icons/edit-clear.svg</file>
+        <file alias="fColorIcon">icons/fcolor_icon.png</file>
+        <file alias="lineIcon">icons/line_icon.png</file>
+        <file alias="newIcon">icons/document-new.svg</file>
+        <file alias="openIcon">icons/document-open.svg</file>
+        <file alias="penIcon">icons/edit.svg</file>
+        <file alias="rectIcon">icons/rect_icon.png</file>
+        <file alias="redoIcon">icons/edit-redo.svg</file>
+        <file alias="resizeIcon">icons/resize_icon.png</file>
+        <file alias="saveIcon">icons/document-save.svg</file>
+        <file alias="undoIcon">icons/edit-undo.svg</file>
+        <file alias="application-exit">icons/application-exit.svg</file>
+        <file alias="background-color">icons/background-color.png</file>
+        <file alias="color-managment">icons/color-management.svg</file>
+        <file alias="edit-resize">icons/ediit-resize.svg</file>
+        <file alias="edit-resize-dark">icons/ediit-resize-dark.png</file>
+        <file alias="eraser">icons/eraser.png</file>
+        <file alias="Icon">Paint.png</file>
+        <file alias="document-save-as">icons/document-save-as.svg</file>
+    </qresource>
+    <qresource prefix="/translation">
+        <file>qtbase_de.qm</file>
+    </qresource>
+</RCC>

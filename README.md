@@ -25,6 +25,7 @@
 
     Version used: 5.12.8 and 5.15.2
 
-## Note:
-On Android you need to clone [this](https://gitlab.com/mattbas/Qt-Color-Widgets) git repo using
-``git clone https://gitlab.com/mattbas/Qt-Color-Widgets.git``
+## Notes:
+- On Android you need to clone [this](https://gitlab.com/mattbas/Qt-Color-Widgets) git repo using
+  ``git clone https://gitlab.com/mattbas/Qt-Color-Widgets.git``
+- This APP will not receive any further updates

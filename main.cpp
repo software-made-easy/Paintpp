@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
     a.setApplicationVersion(APP_VERSION);
     a.setWindowIcon(QIcon(":/icons/Icon"));
 
-    MainWindow w("Paint++");
+    MainWindow w;
     w.show();
     return a.exec();
 }

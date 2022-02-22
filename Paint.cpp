@@ -75,6 +75,42 @@ MainWindow::MainWindow(const char* name, QWidget *parent)
     loadSettings();
 }
 
+MainWindow::MainWindow(QWidget *parent)
+    :QMainWindow(parent)
+{
+    // create the DrawArea, which will receive the draw mouse events
+    drawArea = new DrawArea(this);
+    drawArea->setStyleSheet("background-color:transparent");
+
+    // get default tool
+    currentTool = drawArea->getCurrentTool();
+
+    // create the menu and toolbar
+    createMenuAndToolBar();
+
+    // init dialog pointers to 0
+    penDialog = 0;
+    lineDialog = 0;
+    eraserDialog = 0;
+    rectDialog = 0;
+
+    // adjust window size, name, & stop context menu
+    setWindowTitle(tr("Paint++"));
+    resize(QDesktopWidget().availableGeometry(this).size()*.6);
+    setContextMenuPolicy(Qt::PreventContextMenu);
+    setCentralWidget(drawArea);
+
+    // settings
+#ifdef Q_OS_ANDROID
+    settings = new QSettings(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/SME_PAINT++.ini",
+                             QSettings::IniFormat, this);
+#else
+    settings = new QSettings("SME", "Paint++", this);
+#endif
+
+    loadSettings();
+}
+
 MainWindow::~MainWindow()
 {
     delete penDialog;

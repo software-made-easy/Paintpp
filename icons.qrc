@@ -20,6 +20,7 @@
         <file alias="eraser">icons/eraser.png</file>
         <file alias="Icon">Paint.png</file>
         <file alias="document-save-as">icons/document-save-as.svg</file>
+        <file alias="tool-icon">icons/tools-icon.svg</file>
     </qresource>
     <qresource prefix="/translation">
         <file>qtbase_de.qm</file>

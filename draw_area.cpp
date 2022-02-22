@@ -16,6 +16,9 @@ DrawArea::DrawArea(QWidget *parent)
     : QGraphicsView(parent)
 
 {
+    // set scene
+    setScene(&szene);
+
     // initialize the undo stack
     undoStack = new QUndoStack(this);
     undoStack->setUndoLimit(UNDO_LIMIT);
@@ -114,7 +117,7 @@ void DrawArea::mouseMoveEvent(QMouseEvent *e)
                 drawingPoly = true;
             }
         }
-        currentTool->drawTo(e->pos(), this, image);
+        currentTool->drawTo(e->pos(), viewport(), image);
     }
 }
 
@@ -137,7 +140,7 @@ void DrawArea::mouseReleaseEvent(QMouseEvent *e)
             //return;
         }
         if(currentTool->getType() == pen)
-            currentTool->drawTo(e->pos(), this, image);
+            currentTool->drawTo(e->pos(), viewport(), image);
 
         // for undo/redo - make sure there was a change
         // (in case drawing began off-image)
@@ -381,7 +384,7 @@ void DrawArea::createNewImage(const QSize &size)
     *image = QPixmap(size);
     image->fill(backgroundColor);
     update();
-    // setBackgroundBrush(QBrush(backgroundColor));
+    setBackgroundBrush(QBrush(Qt::white));
 
     // for undo/redo
     if(!imagesEqual(oldImage, *image))

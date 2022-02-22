@@ -105,6 +105,9 @@ private:
     /** Don't allow copying */
     DrawArea(const DrawArea&);
     DrawArea& operator=(const DrawArea&);
+
+    /** Scene for draw rect, line, etc */
+    QGraphicsScene szene;
 };
 
 /** defined in draw_area.cpp */

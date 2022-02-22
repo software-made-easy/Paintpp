@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QPen>
+#include <QGraphicsScene>
 
 #include "constants.h"
 
@@ -19,7 +20,7 @@ public:
     virtual ~Tool() {}
 
     virtual ToolType getType() const = 0;
-    virtual void drawTo(const QPoint&, DrawArea*, QPixmap*) {}
+    virtual void drawTo(const QPoint&, QWidget*, QPixmap*) {}
 
     QPoint getStartPoint() const { return startPoint; }
     void setStartPoint(QPoint point) { startPoint = point; }
@@ -41,7 +42,7 @@ public:
        : Tool(brush, width, s, c, j) {}
 
     virtual ToolType getType() const { return pen; }
-    virtual void drawTo(const QPoint&, DrawArea*, QPixmap*);
+    virtual void drawTo(const QPoint&, QWidget*, QPixmap*);
 
 private:
     /** Don't allow copying */
@@ -57,7 +58,7 @@ public:
              Qt::PenJoinStyle j = Qt::BevelJoin)
        : Tool(brush, width, s, c, j) {}
     virtual ToolType getType() const { return line; }
-    virtual void drawTo(const QPoint&, DrawArea*, QPixmap*);
+    virtual void drawTo(const QPoint&, QWidget*, QPixmap*);
 
 private:
     /** Don't allow copying */
@@ -94,7 +95,7 @@ public:
              int roundedCurve = DEFAULT_RECT_CURVE);
 
     virtual ToolType getType() const { return rect_tool; }
-    virtual void drawTo(const QPoint&, DrawArea*, QPixmap*);
+    virtual void drawTo(const QPoint&, QWidget*, QPixmap*);
 
     FillColor getFillMode() const { return fillMode; }
     void setFillMode(FillColor mode) { fillMode = mode; }

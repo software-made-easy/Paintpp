@@ -1,4 +1,5 @@
 #include <QPainter>
+#include <QGraphicsLineItem>
 
 #include "tool.h"
 #include "draw_area.h"
@@ -14,7 +15,7 @@
  *                          -endPoint is where the mouse was moved TO on this event.
  *
  */
-void PenTool::drawTo(const QPoint &endPoint, DrawArea *drawArea, QPixmap *image)
+void PenTool::drawTo(const QPoint &endPoint, QWidget *drawArea, QPixmap *image)
 {
     QPainter painter(image);
     painter.setPen(static_cast<QPen>(*this));
@@ -34,7 +35,7 @@ void PenTool::drawTo(const QPoint &endPoint, DrawArea *drawArea, QPixmap *image)
  *                           -endPoint is where the mouse was released
  *
  */
-void LineTool::drawTo(const QPoint &endPoint,  DrawArea *drawArea, QPixmap *image)
+void LineTool::drawTo(const QPoint &endPoint, QWidget *drawArea, QPixmap *image)
 {
     QPainter painter(image);
     painter.setPen(static_cast<QPen>(*this));
@@ -63,7 +64,7 @@ RectTool::RectTool(const QBrush &brush, qreal width, Qt::PenStyle s,
  *                           -endPoint is where the mouse was released
  *
  */
-void RectTool::drawTo(const QPoint &endPoint,  DrawArea *drawArea, QPixmap *image)
+void RectTool::drawTo(const QPoint &endPoint, QWidget *drawArea, QPixmap *image)
 {
     QPainter painter(image);
     painter.setPen(static_cast<QPen>(*this));

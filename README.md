@@ -25,6 +25,16 @@
 
     Version used: 5.12.8 and 5.15.2
 
+# To do:
+- [ ] Use QGraphicsScene do draw lines, etc
+- [ ] Add more tools
+- [ ] Optimasations for android
+- [ ] Fix change background color
+- [ ] Print/Print preview support
+- [ ] Translate complete App, not just the File menu
+- [ ] Add change language option
+- [ ] ...
+
 ## Notes:
 - On Android you need to clone [this](https://gitlab.com/mattbas/Qt-Color-Widgets) git repo using
   ``git clone https://gitlab.com/mattbas/Qt-Color-Widgets.git``
